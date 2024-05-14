@@ -50,7 +50,7 @@ RUN curl -sSLf -o /tmp/google-cloud-sdk.tar.gz "https://dl.google.com/dl/cloudsd
     ln -s /opt/google-cloud-sdk/path.bash.inc /etc/profile.d/google-cloud-sdk.sh
 
 # Download and install VS Code CLI
-ARG VSCODE_CLI_VERSION=1.80.1
+ARG VSCODE_CLI_VERSION=1.89
 RUN VSCODE_CLI_URL=$(curl -sSLf "https://update.code.visualstudio.com/api/versions/${VSCODE_CLI_VERSION}/cli-alpine-x64/stable" | jq -r ".url") && \
     curl -sSLf -o /tmp/vscode-cli.tar.gz "${VSCODE_CLI_URL}" && \
     tar -xf /tmp/vscode-cli.tar.gz -C /usr/local/bin && \
